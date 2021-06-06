@@ -1,0 +1,89 @@
+﻿@model WebProject.Models.Message
+
+@{
+    ViewBag.Title = "MessageDetails";
+}
+
+<div class="module">
+    <div class="module-head">
+        <h3>Message Details</h3>
+    </div>
+    <div class="module-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Roll Number</th>
+                    <th>Text</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => modelItem.rollNum)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => modelItem.text)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => modelItem.time)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => modelItem.status)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "EditMessage", new { id = Model.Id })
+                    </td>
+            </tbody>
+        </table>
+        <br />
+        <!-- <hr /> -->
+        <br />
+    </div>
+</div>
+
+@*<h2>MessageDetails</h2>
+
+    <div>
+        <h4>Message</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.rollNum)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.rollNum)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.text)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.text)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.status)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.time)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.time)
+            </dd>
+
+        </dl>
+    </div>*@
+<p>
+    @Html.ActionLink("Back to List", "ViewMessages")
+</p>

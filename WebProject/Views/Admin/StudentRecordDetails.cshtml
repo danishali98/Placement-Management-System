@@ -1,0 +1,196 @@
+﻿@model WebProject.Models.StudentRecord
+
+@{
+    ViewBag.Title = "StudentRecordDetails";
+}
+
+<div class="module">
+    <div class="module-head">
+        <h3>Student Information</h3>
+    </div>
+    <div class="module-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Discipline</th>
+                    <th>CGPA</th>
+                    <th>Batch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.discipline)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.cgpa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.batch)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <!-- <hr /> -->
+        <br />
+    </div>
+</div>
+
+<div class="module">
+    <div class="module-head">
+        <h3>Record</h3>
+    </div>
+    <div class="module-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Organization</th>
+                    <th>Location</th>
+                    <th>Postion</th>
+                    <th>Start Date</th>
+                    <th>Finish Date</th>
+                    <th>Stipend</th>
+                    <th>Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.experienceList)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.organization)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.location)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.position)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.startDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.endDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.stipend)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.details)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit Experience", "EditExperience", new { id = item.Id }) |
+                            @Html.ActionLink("Delete Experience", "DeleteExperience", new { id = item.Id })
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
+        <br />
+        <!-- <hr /> -->
+        <br />
+
+
+    </div>
+</div>
+
+
+
+@*<div>
+        <h4>StudentRecord</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.discipline)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.discipline)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.cgpa)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.cgpa)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.batch)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.batch)
+            </dd>
+            <dt>
+                Experience
+            </dt>
+
+            <dd>
+                @if (Model.experienceList.Count != 0)
+                {
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <td>
+                                    <b>Organization</b>
+                                </td>
+                                <td>
+                                    <b>Work Details</b>
+                                </td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.experienceList)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.organization
+                                    </td>
+                                    <td>
+                                        Postition:
+                                        @item.position<br />
+                                        Organization:
+                                        @item.organization<br />
+                                        Start Date:
+                                        @item.startDate<br />
+                                        End Date:
+                                        @item.endDate<br />
+                                        Stipend:
+                                        @item.stipend<br />
+                                        Details:
+                                        @item.details<br />
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit Experience", "EditExperience", new { id = item.Id }) |
+                                        @Html.ActionLink("Delete Experience", "DeleteExperience", new { id = item.Id })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                }
+            </dd>
+
+        </dl>
+    </div>*@
+<p>
+    @Html.ActionLink("Edit", "EditStudentRecord", new { id = Model.rollNum }) |
+    @Html.ActionLink("Back to Dashboard", "Index")
+</p>

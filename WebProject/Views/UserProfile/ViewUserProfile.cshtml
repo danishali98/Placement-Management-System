@@ -1,0 +1,140 @@
+﻿@model WebProject.Models.UserProfile
+
+@{
+    ViewBag.Title = "ViewUserProfile";
+}
+
+<div class="module">
+    <div class="module-head">
+        <h3>Profile</h3>
+    </div>
+    <div class="module-body">
+        <br />
+        <br />
+        <div class="image-container">
+            <img src="~/images/user.png" style="display: block;margin-left: auto;margin-right: auto;" />
+        </div>
+
+        <hr />
+
+        <table style="margin-left: auto;margin-right: auto;">
+            <tbody>
+                <tr>
+                    <td>
+                        Name:
+                    </td>
+                    <td>
+                        @Model.name
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email:
+                    </td>
+                    <td>
+                        @Model.email
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        User Name:
+                    </td>
+                    <td>
+                        @Model.userName
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Batch:
+                    </td>
+                    <td>
+                        @ViewBag.Batch
+                    </td>
+                <tr>
+                    <td>
+                        Discipline:
+                    </td>
+                    <td>
+                        @ViewBag.Discipline
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Role:
+                    </td>
+                    <td>
+                        @ViewBag.Role
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        @*<br />
+            <h2><b>Details </b></h2>
+            <hr />
+
+            <p>
+                Name: @Model.name
+            </p>
+            <p>
+                Email: @Model.email
+            </p>
+            <p>
+                Roll Num: @Model.userName
+            </p>
+            <p>
+                Batch: @ViewBag.Batch
+            </p>
+            <p>
+                Discipline: @ViewBag.Discipline
+            </p>
+            <p>
+                Role: @ViewBag.Role
+            </p>
+            <br />*@
+    </div>
+</div>
+
+@*<h2>ViewUserProfile</h2>
+
+    <div>
+        <h4>UserProfile</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                Email:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.email)
+            </dd>
+
+            <dt>
+                User Name:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.userName)
+            </dd>
+
+            <dt>
+                Role:
+            </dt>
+
+            <dd>
+                @ViewBag.Role
+            </dd>
+
+        </dl>
+    </div>*@
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+    @if (ViewBag.Role == "Admin")
+    {
+        @Html.ActionLink("Back to Dashboard", "Index", "Admin")
+    }
+    else
+    {
+        @Html.ActionLink("Back to Dashboard", "Index", "Student")
+    }
+</p>

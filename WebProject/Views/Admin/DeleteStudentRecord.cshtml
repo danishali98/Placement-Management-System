@@ -1,0 +1,94 @@
+﻿@model WebProject.Models.StudentRecord
+
+@{
+    ViewBag.Title = "DeleteStudentRecord";
+}
+
+@*<h2>DeleteStudentRecord</h2>*@
+
+<h3>Are you sure you want to delete this?</h3>
+
+<div class="module">
+    <div class="module-head">
+        <h3>Student Record</h3>
+    </div>
+    <div class="module-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Discipline</th>
+                    <th>CGPA</th>
+                    <th>Batch</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.discipline)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.cgpa)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.batch)
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <!-- <hr /> -->
+        <br />
+
+        @*<div>
+            <h4>StudentRecord</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.discipline)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.discipline)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.cgpa)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.cgpa)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.batch)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.batch)
+                </dd>
+
+            </dl>*@
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "ViewRecords")
+            </div>
+        }
+    </div>
+</div>

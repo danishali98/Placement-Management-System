@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNet.Identity
+
+@{
+    if (HttpContext.Current.User.Identity.IsAuthenticated)
+    {
+        var user = HttpContext.Current.User.Identity.GetUserId();
+        
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Login.cshtml";
+    }
+
+}

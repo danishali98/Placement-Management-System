@@ -1,0 +1,147 @@
+﻿@model WebProject.Models.StudentRecord
+
+@{
+    ViewBag.Title = "CreateStudentRecord";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="module">
+        <div class="module-head">
+            <h3>Create Student Record</h3>
+        </div>
+        <div class="module-body">
+            <table class="table table-striped">
+
+                <tbody>
+                    <tr>
+                        <td>
+                            Roll Number
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.rollNum, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.rollNum, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>
+                            Name
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Discipline
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.discipline, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.discipline, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            CGPA
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.cgpa, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.cgpa, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            Batch
+                        </td>
+                        <td>
+                            @Html.EditorFor(model => model.batch, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.batch, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="controls">
+                <a href="~/Admin/CreateStudentRecord">
+                    <input type="submit" name="submit" class="btn btn-primary btn-md" value="Create">
+                </a>
+            </div>
+            <br />
+            <!-- <hr /> -->
+            <br />
+        </div>
+    </div>
+}
+
+@*<h2>CreateStudentRecord</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>StudentRecord</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.rollNum, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.rollNum, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.rollNum, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.discipline, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.discipline, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.discipline, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.cgpa, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.cgpa, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.cgpa, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.batch, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.batch, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.batch, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }*@
+
+<br />
+<div>
+    @Html.ActionLink("Back to List", "ViewRecords")
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
