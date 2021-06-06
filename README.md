@@ -10,4 +10,4 @@ The project acts as a utility for the placement officers of any institution. The
 Both the above modules will have the functionality of sign in, sign out. The accounts for admin will be created when the application is deployed. The admins can then create accounts for the students and let them know their credentials.
 
 # How to Run?
-Download the project. Change <ConnectionStrings> in Web.config and run Code First Migrations to create the database and run the application. You can find admin credentials in the Roles modules.
+Download the project. Change "ConnectionStrings" in Web.config and run Code First Migrations to create the database and run the application. You can find admin credentials in the Roles modules.
